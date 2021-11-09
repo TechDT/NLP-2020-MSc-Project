@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
+
+  <title>SWAnalytics</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Chart.js include -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+  <!-- Custom styles for this template -->
+  <link href="css/scrolling-nav.css" rel="stylesheet">
+
+  <!-- jQuery include -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src="https://www.amcharts.com/lib/4/core.js"></script>
+  <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+  <script src="https://www.amcharts.com/lib/4/maps.js"></script>
+  <script src="https://www.amcharts.com/lib/4/geodata/continentsLow.js"></script>
+  <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+
+  <!-- Size of graph charts -->
+  <script src="js/jquery-csv.js"></script>
+  <script src="js/sent_vs_stock_chart.js"></script>
+  <script src="js/sentiment_gauge_chart.js"></script>
+  <script src="js/topic_analysis.js"></script>
+  <script src="js/world_map.js"></script>
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="./images/logo_swanalytics.png"
+          style="width:200px;"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <!-- ### SWAnalytics NAV ### | DO NOT REMOVE THIS LINE -->
+      </div>
+    </div>
+  </nav>
+
+
+  <header>
+    <div class="container">
+      <!-- ### SWAnalytics STATISTICS ### | DO NOT REMOVE THIS LINE -->
+    </div>
+  </header>
+
+
+  <!-- START Main content -->
+  <section class="bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 mx-auto" style="text-align: justify;">
+          <h2>Correlation</h2>
+          <p><strong>Line chart:</strong> Compares the trend of stock prices and sentiments for the given period of time. For the <strong>stock price</strong> the daily value considered is
+            the closing price of the day. Prices are normalized by setting the maximum to 1 and scaling down the others. For <strong>sentiment</strong> the degree of positivity for each day is calculated
+            as follows: <strong>1 * (positive tweets)% + 0.5 * (neutral tweets)% + 0 * (negative tweets)%</strong>. The obtained values are normalized. <strong>Hovering</strong> on each datapoint reveals the actual rates
+            for both datasets.</p>
+          <p><strong>Correlation coefficient:</strong> Shows the statistical relationship between the stock prices and positivity, regardless of the day of the event.</p>
+          <div class="row justify-content-center" style="margin-top:50px;">
+            <div class="col-md-6">
+              <canvas id="sent_stock" height="250"></canvas>
+            </div>
+            <div class="col-md-6">
+              <div class="corr-index">
+                <h3>Correlation Coefficient</h3>
+                <p class="lead" id="corridx_value"></p>
+              </div>
+            </div>
+          </div>
+          <script>
+            var ctx = $("#sent_stock");
+            // ### SWAnalytics SENTIMENT_STOCK ### | DO NOT REMOVE THIS LINE
+          </script>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 mx-auto" style="text-align: justify;">
+          <h2>Global Sentiment</h2>
+          <p><strong>Doughnut chart:</strong> Shows the aggregated sentiment for the whole world as a percentage.</p>
+          <p><strong>World map:</strong> Shows the aggregated sentiment per continent as a percentage.</p>
+          <div class="row justify-content-center" style="margin-top:50px;">
+              <div class="col-md-6">
+                <canvas id="sent_gauge" height="250"></canvas>
+              </div>
+              <div class="col-md-6">
+                <div id="world_map"></div>
+              </div>
+          </div>
+          <script>
+            var ctx = $("#sent_gauge");
+            // ### SWAnalytics SENTIMENT_GAUGE ### | DO NOT REMOVE THIS LINE
+
+            // ### SWAnalytics WORLD_SENTIMENT_MAP ### | DO NOT REMOVE THIS LINE
+          </script>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 mx-auto" style="text-align: justify;">
+          <h2>Most Relevant Topics</h2>
+          <p><strong>Cluster chart:</strong> Clustering of the topics is visualized in two dimensions with the size of the clustered topics depicting the weight of a particular topic in the analyzed event.</p>
+          <p><strong>Bar chart:</strong> Shows the word frequencies per topic and occurrence in all of the tweets of this event. 
+            The relevance score2 is automatically set at 1. With this setting the sole relevance is based on the probability of a certain term "w" from the vocabulary to find itself in topic "k". 
+            An optimal value of "λ" or the relevance score is 0.6. Moving it slightly above or below this threshold will serve for the best interpretability of the topics.</p>
+          <div class="row justify-content-center" style="margin-top:50px;">
+            <div class="col-md-12">
+              <div id="topicAnalysis"></div>
+              <script>
+                var ctx = $("#topicAnalysis");
+                // ### SWAnalytics TOPIC_ANALYSIS
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END Main content -->
+
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; 2020 All rights reserved | SWAnalytics</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom JavaScript for this theme -->
+  <script src="js/scrolling-nav.js"></script>
+</body>
+
+</html>

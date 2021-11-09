@@ -1,0 +1,26 @@
+{
+    "stock": "TSLA",
+    "events": [
+      {
+        "title": "Tesla unveils its new Cybertruck",
+        "start_date": "2019-11-21",
+        "end_date": "2019-11-23",
+        "hashtags": [ "#cybertruck", "#Cybertruck", "#tesla", "#Tesla", "#teslamotors", "#TeslaMotors", "#ElonMusk", "#elonmusk" ],
+        "max_tweets_per_day": 550
+      },
+      {
+        "title": "Tesla reaches its highest stock price till date of $962.86",
+        "start_date": "2020-02-04",
+        "end_date": "2020-02-06",
+        "hashtags": [ "#tesla", "#Tesla", "#teslamotors", "#TeslaMotors", "#ElonMusk", "#elonmusk" ],
+        "max_tweets_per_day": 550
+      },
+      {
+        "title": "Tesla suffers its worst day of the year after brutal earnings report and loss of CTO",
+        "start_date": "2019-07-24",
+        "end_date": "2019-07-26",
+        "hashtags": [ "#tesla", "#Tesla", "#teslamotors", "#TeslaMotors", "#ElonMusk", "#elonmusk" ],
+        "max_tweets_per_day": 550
+      }
+    ]
+  }

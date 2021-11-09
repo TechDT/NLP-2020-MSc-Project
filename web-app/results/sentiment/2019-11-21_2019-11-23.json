@@ -1,0 +1,26 @@
+{
+    "positive_percentage": 2.6315789473684212,
+    "negative_percentage": 0.4421052631578947,
+    "neutral_percentage": 96.92631578947369,
+    "correlation_index": -0.7856493656650957,
+    "per_day": [
+        {
+            "date": "2019-11-21",
+            "positivity": 0.49877074370006147,
+            "stock_norm": 1.0,
+            "stock_real": 354.8299865722656
+        },
+        {
+            "date": "2019-11-22",
+            "positivity": 0.527898326100434,
+            "stock_norm": 0.9385903704536371,
+            "stock_real": 333.0400085449219
+        },
+        {
+            "date": "2019-11-23",
+            "positivity": 0.5059602649006623,
+            "stock_norm": 0.9478905637291737,
+            "stock_real": 336.339996
+        }
+    ]
+}

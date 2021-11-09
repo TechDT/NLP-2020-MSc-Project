@@ -1,0 +1,28 @@
+version: '3.4'
+
+services:
+  data-analysis:
+    image: "data-analysis"
+    container_name: data-analysis
+    environment:
+      - DATA_ANALYSIS=false   # CAUTION: setting DATA_ANALYSIS=true will REMOVE all the currently fetched and analyzed data. 
+                              # It will trigger fetching sentiment and topic analysis of according to the events.json.
+    build:
+      context: .
+    volumes:
+      - ./data-analysis:/data-analysis
+      - ./data-analysis/nltk_data:/usr/local/share/nltk_data
+      - ./web-app:/web-app
+    command: sh -c "./run_app.sh"
+
+  web-app:
+    image: "nginx:1.17.4"
+    container_name: web-app
+    restart: always
+    depends_on: 
+      - data-analysis
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./web-app:/usr/share/nginx/html
+    ports:
+      - 8080:80

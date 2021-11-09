@@ -1,0 +1,62 @@
+[
+    {
+        "name": "North America",
+        "tweets_count": 1949,
+        "positive_tweets_count": 60,
+        "neutral_tweets_count": 1883,
+        "negative_tweets_count": 6,
+        "positive_percentage": 3.078501795792714,
+        "neutral_percentage": 96.61364802462802,
+        "negative_percentage": 0.3078501795792714
+    },
+    {
+        "name": "South America",
+        "tweets_count": 242,
+        "positive_tweets_count": 6,
+        "neutral_tweets_count": 235,
+        "negative_tweets_count": 1,
+        "positive_percentage": 2.479338842975207,
+        "neutral_percentage": 97.10743801652893,
+        "negative_percentage": 0.4132231404958678
+    },
+    {
+        "name": "Europe",
+        "tweets_count": 1385,
+        "positive_tweets_count": 33,
+        "neutral_tweets_count": 1349,
+        "negative_tweets_count": 3,
+        "positive_percentage": 2.3826714801444044,
+        "neutral_percentage": 97.40072202166066,
+        "negative_percentage": 0.21660649819494585
+    },
+    {
+        "name": "Asia",
+        "tweets_count": 541,
+        "positive_tweets_count": 11,
+        "neutral_tweets_count": 530,
+        "negative_tweets_count": 0,
+        "positive_percentage": 2.033271719038817,
+        "neutral_percentage": 97.96672828096118,
+        "negative_percentage": 0.0
+    },
+    {
+        "name": "Oceania",
+        "tweets_count": 207,
+        "positive_tweets_count": 2,
+        "neutral_tweets_count": 205,
+        "negative_tweets_count": 0,
+        "positive_percentage": 0.966183574879227,
+        "neutral_percentage": 99.03381642512078,
+        "negative_percentage": 0.0
+    },
+    {
+        "name": "Africa",
+        "tweets_count": 426,
+        "positive_tweets_count": 13,
+        "neutral_tweets_count": 411,
+        "negative_tweets_count": 2,
+        "positive_percentage": 3.051643192488263,
+        "neutral_percentage": 96.47887323943662,
+        "negative_percentage": 0.4694835680751174
+    }
+]
